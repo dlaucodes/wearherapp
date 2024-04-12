@@ -1,19 +1,16 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
 
 
 const index = () =>{
-  useEffect(()=>{
-    fetch("http://localhost:8080/api/home").then(
-      response => response.json()
-    ).then(
-      data => {
-        console.log(data)
-      }
-    )
-  })
+    const fetchWeather = (e) =>{
+      e.preventDefault()
+      setLoading(true)
+    }
 
   return (
-    <div>index</div>
+    <div className="w-full h-full flex flex-col ">
+
+    </div>
   )
 }
 export default index
