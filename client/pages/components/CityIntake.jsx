@@ -6,7 +6,7 @@ const CityInputForm = ({onWeatherData}) => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`api/weather/city?city=${city}`)
+    const response = await fetch(`http://localhost:8080/weather/city?city="${city}"`)
     const weatherData = await response.json()
     onWeatherData(weatherData)
     console.log(response)
@@ -14,7 +14,7 @@ const CityInputForm = ({onWeatherData}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <input className="text-black"
       type="text"
       value={city}
       onChange={(e)=> setCity(e.target.value)}
